@@ -1,1 +1,1 @@
-add_executable(kmp kmp.cpp)
+add_executable(kmp_cpp kmp.cpp)

@@ -1,1 +1,1 @@
-add_subdirectory(Knuth-Morris-Pratt/c++)
+add_subdirectory(knuth-morris-pratt/c++)

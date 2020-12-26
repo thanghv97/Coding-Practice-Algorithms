@@ -30,7 +30,7 @@ void kmp(std::string str, std::string pat) {
 
 int main(int argc, char* argv[]) {
     if (argc < 3) {
-        std::cerr << "Usage: ./kmp string pattern" << std::endl;
+        std::cerr << "Usage: ./kmp_cpp string pattern" << std::endl;
         return 1;
     }
 
