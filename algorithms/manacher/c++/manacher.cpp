@@ -5,23 +5,21 @@ void manacher(std::string str) {
     int n = str.length();
     std::vector<int> f(2 * n + 1);
 
-    // create new string by add character # between characters of base string
+    // processing on virtual string by add character # between characters of base string
     // example base string aabc => new string #a#a#b#c# 
-    std::string p = "#";
-    for (int i = 0; i < n; i++) {
-        p = p + str[i] + '#';
-    }
+
 
     int center = 0, right_most = 0;
-    int rs = 0, id = 0; 
+    int rs = 0, id = 0;
 
-    for (int i = 1; i < 2*n+1; i++) {
+    for (int i = 1; i < 2 * n + 1; i++) {
         // set longest palindromes length at i base on symmetric point i_mirror though center point and right_most
         int i_mirror = 2 * center - i;
         f[i] = (i < right_most) ? std::min(right_most - i, f[i_mirror]) : 0;
 
-        // expand longest palindromes length at i 
-        while (i - f[i] - 1 >= 0 && i + f[i] + 1 < 2*n+1 && p[i - f[i] - 1] == p[i + f[i] + 1]) f[i]++;
+        // expand longest palindromes length at i
+        while (i - f[i] - 1 >= 0 && i + f[i] + 1 < 2 * n + 1 &&
+               ((i + f[i] + 1) % 2 == 0 || str[(i - f[i] - 1) / 2] == str[(i + f[i] + 1) / 2])) f[i]++;
 
         // check is longest palindromes substring to save position i
         if (f[i] > rs) {
