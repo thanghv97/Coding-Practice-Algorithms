@@ -1,0 +1,1 @@
+add_executable(manacher_cpp manacher.cpp)

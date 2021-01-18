@@ -6,6 +6,7 @@ void kmp(std::string str, std::string pat) {
     int N = str.length();
     int M = pat.length();
 
+    // lps at i denotes the longest substring suffix end at i as same as prefix start at 0
     std::vector<int> lps(M);
     int len = 0;
     lps[0] = 0;
